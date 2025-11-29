@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="ExpanderApp/App.axaml" value="ExpanderApp/ExpanderApp.csproj" />
+        <entry key="ExpanderApp/Views/MainWindow.axaml" value="ExpanderApp/ExpanderApp.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

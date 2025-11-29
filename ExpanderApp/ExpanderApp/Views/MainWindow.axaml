@@ -1,0 +1,136 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ExpanderApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ExpanderApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+<Window.Styles>
+
+    <!--  Chevron Button Normal State  -->
+    <Style Selector="Expander /template/ ToggleButton:not(:pointerover):not(:pressed) /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="SaddleBrown" />
+        <Setter Property="BorderBrush" Value="White" />
+    </Style>
+
+    <!--  Chevron Icon Normal State  -->
+    <Style Selector="Expander /template/ ToggleButton:not(:pointerover):not(:pressed) /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="White" />
+    </Style>
+
+    <!--  Chevron Button Hover State  -->
+    <Style Selector="Expander /template/ ToggleButton:pointerover /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="DeepPink" />
+        <Setter Property="BorderBrush" Value="Yellow" />
+    </Style>
+
+    <!--  Chevron Icon Hover State  -->
+    <Style Selector="Expander /template/ ToggleButton:pointerover /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="Yellow" />
+    </Style>
+
+    <!--  Chevron Button Pressed State  -->
+    <Style Selector="Expander /template/ ToggleButton:pressed /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="BorderBrush" Value="Orange" />
+    </Style>
+
+    <!--  Chevron Icon Pressed State  -->
+    <Style Selector="Expander /template/ ToggleButton:pressed /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="Orange" />
+    </Style>
+
+    <!--  Chevron Button Expanded State  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:not(:pointerover):not(:pressed) /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="ForestGreen" />
+        <Setter Property="BorderBrush" Value="White" />
+    </Style>
+
+    <!--  Chevron Icon Expanded State  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:not(:pointerover):not(:pressed) /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="White" />
+        <Setter Property="StrokeThickness" Value="2" />
+    </Style>
+
+    <!--  Chevron Button Expanded + Hover  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pointerover /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="LimeGreen" />
+    </Style>
+
+    <!--  Chevron Icon Expanded + Hover  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pointerover /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="Yellow" />
+    </Style>
+
+    <!--  Chevron Button Expanded + Pressed  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pressed /template/ Border#ExpandCollapseChevronBorder">
+        <Setter Property="Background" Value="DarkGreen" />
+    </Style>
+
+    <!--  Chevron Icon Expanded + Pressed  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pressed /template/ Path#ExpandCollapseChevron">
+        <Setter Property="Stroke" Value="Orange" />
+    </Style>
+
+    <!--  header style  -->
+    <!--  Header Button Normal State  -->
+    <Style Selector="Expander /template/ ToggleButton">
+        <Setter Property="Background" Value="DarkBlue" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="Navy" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="15,10" />
+    </Style>
+
+    <!--  Header Button Hover State  -->
+    <Style Selector="Expander /template/ ToggleButton:pointerover /template/ Border#ToggleButtonBackground">
+        <Setter Property="Background" Value="BlueViolet" />
+        <Setter Property="BorderBrush" Value="Purple" />
+    </Style>
+
+    <!--  Header Button Pressed State  -->
+    <Style Selector="Expander /template/ ToggleButton:pressed /template/ Border#ToggleButtonBackground">
+        <Setter Property="Background" Value="DarkViolet" />
+        <Setter Property="BorderBrush" Value="DarkOrchid" />
+    </Style>
+
+    <!--  Header Button Expanded State  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton">
+        <Setter Property="Background" Value="MidnightBlue" />
+        <Setter Property="BorderBrush" Value="RoyalBlue" />
+    </Style>
+
+    <!--  Header Button Expanded + Hover  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pointerover /template/ Border#ToggleButtonBackground">
+        <Setter Property="Background" Value="MediumSlateBlue" />
+        <Setter Property="BorderBrush" Value="DodgerBlue" />
+    </Style>
+
+    <!--  Header Button Expanded + Pressed  -->
+    <Style Selector="Expander:expanded /template/ ToggleButton:pressed /template/ Border#ToggleButtonBackground">
+        <Setter Property="Background" Value="DarkSlateBlue" />
+        <Setter Property="BorderBrush" Value="SteelBlue" />
+    </Style>
+
+</Window.Styles>
+
+    <Expander IsExpanded="true">
+        <Expander.Header>
+            <Label>This is the header</Label>
+        </Expander.Header>
+        <StackPanel Orientation="Vertical">
+            <Label Name="First">This is the first label of the expander</Label>
+            <Label Name="Second">This is the second label of the expander</Label>
+            <Label Name="Third">This is the third label of the expander</Label>
+            <Label Name="Fourth">This is the fourth label of the expander</Label>
+        </StackPanel>
+    </Expander>
+</Window>
